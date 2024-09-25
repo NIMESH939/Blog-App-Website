@@ -3,6 +3,7 @@ import { assets } from "@/Assets/assets";
 import axios from "axios";
 import Image from "next/image";
 import React, { useState } from "react";
+import { toast } from "react-toastify";
 
 const page = () => {
   const [image, setImage] = useState(false);
@@ -31,7 +32,20 @@ const page = () => {
     formData.append("authorImg", data.authorImg);
     formData.append("image", image);
 
-    const response = await axios.post('/api/blog',formData);
+    const response = await axios.post("/api/blog", formData);
+    if (response.data.success) {
+      toast.success(response.data.msg);
+      setImage(false);
+      setData({
+        title: "",
+        description: "",
+        category: "Startup",
+        author: "Alex Bennett",
+        authorImg: "/author_img.png",
+      });
+    } else {
+      toast.error("Error");
+    }
   };
 
   return (
