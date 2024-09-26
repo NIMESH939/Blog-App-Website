@@ -11,6 +11,16 @@ const page = () => {
     setBlogs(response.data.blogs);
   };
 
+  const deleteBlog = async (mongoId) => {
+    const response = await axios.delete("/api/blog/", {
+      params: {
+        id: mongoId,
+      },
+    });
+    toast.success(response.data.msg);
+    fetchBlogs();
+  };
+
   useEffect(() => {
     fetchBlogs();
   }, []);
@@ -46,6 +56,7 @@ const page = () => {
                   author={item.author}
                   authorImg={item.author_img}
                   date={item.date}
+                  deleteBlog={deleteBlog}
                 />
               );
             })}
