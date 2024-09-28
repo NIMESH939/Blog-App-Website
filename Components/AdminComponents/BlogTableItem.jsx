@@ -31,7 +31,54 @@ const BlogTableItem = ({
         onClick={() => deleteBlog(mongoId)}
         className="px-6 py-4 cursor-pointer"
       >
-        X
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="25"
+          height="25"
+          viewBox="0 0 24 24"
+          fill="none"
+          className="Social-image"
+        >
+          <path
+            d="M3 6h18"
+            stroke="#57595e"
+            strokeWidth="2"
+            strokeLinecap="round"
+          />
+          <path
+            d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"
+            stroke="#57595e"
+            strokeWidth="2"
+            strokeLinecap="round"
+          />
+          <rect
+            x="5"
+            y="6"
+            width="14"
+            height="16"
+            rx="2"
+            stroke="#57595e"
+            strokeWidth="2"
+          />
+          <line
+            x1="10"
+            y1="11"
+            x2="10"
+            y2="17"
+            stroke="#57595e"
+            strokeWidth="2"
+            strokeLinecap="round"
+          />
+          <line
+            x1="14"
+            y1="11"
+            x2="14"
+            y2="17"
+            stroke="#57595e"
+            strokeWidth="2"
+            strokeLinecap="round"
+          />
+        </svg>
       </td>
     </tr>
   );
