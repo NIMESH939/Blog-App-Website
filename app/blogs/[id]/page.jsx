@@ -62,6 +62,7 @@ const page = ({ params }) => {
             height={720}
             alt=""
           />
+          {/*
           <h1 className="my-8 text-[26px] font-semibold">Introduction:</h1>
           <p className="">{data.description}</p>
 
@@ -115,7 +116,13 @@ const page = ({ params }) => {
             balanced and fulfilling lifestyle. Remember that it's okay to seek
             support and guidance from professionals or mentors along the way.
             You well-being and happiness are worth the effort.
-          </p>
+          </p> */}
+
+          <div
+            className="blog-content"
+            dangerouslySetInnerHTML={{ __html: data.description }}
+          ></div>
+
           <div className="my-24">
             <p className="text-black font-semibold my-4">
               Share this article on social media
